@@ -16,7 +16,11 @@ public class FahrenheitCelsius{
       */
      public static void main(String[] args){
        try{
-       
+           
+          for(int i=0;i<args.length;i++){
+              System.out.println(args[i] + "\u00B0F -> " + fahrenheitEnCelsius((Integer.parseInt(args[i])))+ "\u00B0C");   
+            }
+        
       
        }catch(NumberFormatException nfe){
            System.out.println("error : " + nfe.getMessage());  // en cas d'erreur 
@@ -24,15 +28,19 @@ public class FahrenheitCelsius{
        
      }
      
+     
      /** 
       * la méthode à compléter. 
       *   @param f la valeur en degré Fahrenheit
       *   @return  la conversion en degré Celsius
       */
      public static float fahrenheitEnCelsius( int f){
-       // ...
-       return 0.F;	// à compléter	en remplaçant la valeur retournée par la fonction de conversion
-       // ...
+       float resultat,r;  
+       resultat = (f-32)/1.8f;             
+       r=(float)((int)( resultat *10f ))/10f;
+       
+       return r;
+     
      }
 
 }
